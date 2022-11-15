@@ -8,7 +8,7 @@ import {HiAtSymbol,HiFingerPrint,HiOutlineUser,HiOutlineBadgeCheck} from 'react-
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import { register_validate } from '../lib/validate';
-
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export default function Register() {
@@ -45,7 +45,9 @@ export default function Register() {
         {/* form */}
         <form className='flex flex-col gap-5' onSubmit={formik.handleSubmit}>
           {/* //*➡️Name */}
-          <div className={`${styles.input_group}${formik.errors.name && formik.touched.name?'border-rose-600':'border-lime-600'}`}>
+          <div className={styles.input_group}>
+          {/* <div className={`${styles.input_group}${formik.errors.name && formik.touched.name?'border-rose-600':'border-lime-600'}`}> */}
+            {/* <div className={`${styles.input_group} ${formik.errors.name && formik.touched.name?'border-rose-600':''}`}> */}
             <input type='text' className={styles.input_text} name='name' placeholder='Name' {...formik.getFieldProps('name')}/>
           {/* //* Icon for input⬇️*/}
           <span className='flex items-center px-4 icon'>

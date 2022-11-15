@@ -57,7 +57,8 @@ export default function Login() {
         {/* form */}
         <form className='flex flex-col gap-5' onSubmit={formik.handleSubmit}>
           {/* //*➡️Email */}
-          <div className={`${styles.input_group}${formik.errors.email && formik.touched.email?'border-rose-600':'border-lime-600'}`}>
+          <div className={styles.input_group}>
+          {/* <div className={`${styles.input_group}${formik.errors.email && formik.touched.email?'border-rose-600':''}`}> */}
           {/* useable with formik onChange={formik.handleChange} value={formik.values.email} ⤵️*/}
             <input type='email' className={styles.input_text} name='email' placeholder='Email' {...formik.getFieldProps('email')}/>
           {/* //* Icon for input⬇️*/}
@@ -68,7 +69,8 @@ export default function Login() {
           </div>
           {/* //?☠️Error Validation Message */}
           {formik.errors.email && formik.touched.email ? <span className='text-rose-500'>{formik.errors.email}</span>: <></>}
-          <div className={`${styles.input_group}${formik.errors.password && formik.touched.password?'border-rose-600':'border-lime-600'}`}>
+          <div className={styles.input_group}>
+          {/* <div className={`${styles.input_group}${formik.errors.password && formik.touched.password?'border-rose-600':''}`}> */}
           {/* onChange={formik.handleChange} value={formik.values.password} */}
             <input type={`${showpass?"text":"password"}`} className={styles.input_text} name='password' placeholder='Password' {...formik.getFieldProps('password')} />
           {/* //* Icon for input⬇️*/}

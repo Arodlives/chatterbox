@@ -14,55 +14,7 @@ export default function Home() {
   function handleSignout(){
     signOut()
   }
-  // const[session,setSession]=useState(false);
-  // const [user, setUser] = useState({});
-  // const [client,setClient]=useState();
-  // const [channel,setChannel]=useState();
-  // const[messages,setMessages]=useState([]);
-
-  // const videoRef = useRef();
-
-  // useEffect(()=>{
-  //   //*Optional chaining with '?'
-  //   if(!user?.id) return;
-  //   //Wrapping with async
-  //   (async function run(){
-  //     //*➡️Initializing a Server Client Through env 
-  //     const apiKey = StreamChat.getInstance(process.env.NEXT_PUBLIC_STREAM_API_KEY);
-  //     setClient(apiKey);
-      
-  //     const { token } = await fetch('/api/token',{
-  //       method:'POST',
-  //       body:JSON.stringify({
-  //         id:user.id
-  //       })
-  //     }).then(r=>r.json())
-
-  //     //* ⬇️ Ideally the user is pulled from a database instead of hard-coded
-  //     const connectedUser = await apiKey.connectUser(
-  //       {
-  //           id: user.id,
-  //           name: user.id,
-  //           image: 'https://i.imgur.com/fR9Jz14.png',
-  //       },
-  //       //*⬇️Creates A token
-  //     token
-  //     )
-  //       //* What to do after once they are connected
-  //             //* After connecting user
-  //     const channel = apiKey.channel('livestream','spacejelly', {
-  //       name: 'Spacejelly',
-  //       });
-  //       setChannel(channel);
   
-  
-  //     })();
-  //     //*Cleaning resource when that instance is no longer needed
-  //     return ()=> {
-  //       apiKey.disconnectUser();
-  //       setChannel(undefined)
-  //     }
-  // },[user.id]);
 
   return (
     <div >

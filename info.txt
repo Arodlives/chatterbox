@@ -1,1 +1,35 @@
 axios to connect front end fields to backend model 
+
+
+current flow 👍: 
+    
+    Ways of logging in 
+
+        email + password 
+        Oauth providers + Social login 
+        Phone Login
+        2FA 
+
+    How a User is created
+        Form Data User{object} -> make a call using an api 
+        -> To query the database and add the following  
+        Client 
+        DB -Planetscale 
+        Orm-Prisma 
+
+
+    🍣CRUD
+    🟣Create- prisma.user
+
+
+
+        Form (onchange to change the value of a state{object} )
+                the form function holds a 
+                const body = {the states / form fields }
+            
+             ➡️ Form Submit➕Function executed ➡️ Form Data ➡️ 
+
+
+
+             Nextjs is frontend 
+                -next auth is a library handles authentication

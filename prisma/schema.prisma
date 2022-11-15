@@ -1,22 +1,28 @@
+//*⬇️Can have multiple-generators
 generator client {
   provider = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
 }
 
+//*⬇️Only one data source allowed
 datasource db {
   provider = "mysql"
   url = env("DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
+//* Name : Type:Field-type-modifier [],? : @attributes
 model User {
+  //* alternative is to turn id to string type and accept default(uuid())
   id Int @id @default(autoincrement())
   name String?
   email String @unique
+  isActive  String   @default("1") @db.Char(1)
+  preferences Json
   role Role @default(USER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
- }
+}
 
 enum Role{
   USER
