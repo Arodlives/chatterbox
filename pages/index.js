@@ -1,14 +1,15 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import Image from 'next/image'
+import styles from '../styles/Home.module.css'
 import { getSession,useSession,signOut } from "next-auth/react"
-import {LogOutIcon} from "@heroicons/react/outline";
-
-
+// import Logout from "@heroicons/react/outline";
+// import Guest from './guest'
+// import User from './user'
 
 export default function Home() {
-  //?  ⬇️Connecting next auth to change this state variable⬇️
-  const{data:session}=useSession();
+//   //?  ⬇️Connecting next auth to change this state variable⬇️
+  const{data:session}=useSession()
 
 
   function handleSignout(){
@@ -17,20 +18,20 @@ export default function Home() {
   
 
   return (
-    <div >
+    <div className={styles.container}>
       <Head>
         <title>Chatterbox</title>
         <meta name="description" content="Social Chat App" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {session? User({session,handleSignout}): Guest()}
+
+      {session? User({session,handleSignout}) : Guest()}
     </div>
     
   )
 }
-
-//Guest 
- function Guest(){
+// //Guest 
+  function Guest(){
   return (
     <main className='container py-20 mx-auto text-center'>
       <h3 className='text-4xl font-bold'>
@@ -43,7 +44,7 @@ export default function Home() {
   )
  }
 //Authorize User 
-function User({session,handleSignout}){
+  function User({session,handleSignout}){
   return(
     <main className='container py-20 mx-auto text-center'>
     <h3 className='text-4xl font-bold'>
@@ -51,13 +52,14 @@ function User({session,handleSignout}){
     </h3>
 
     <div className='details'>
+      <h5><img src={session.user.image} alt="" style={{borderRadius: '50px'}}/></h5>
       <h5>{session.user.name}</h5>
       <h5>{session.user.email}</h5>
     </div>
 
     <div className='flex justify-center'>
       <button className='px-10 py-1 mt-5 bg-indigo-500 rounded-sm bg-gray-50' onClick={handleSignout}>
-      <LogOutIcon className="w-5 h-5 rotate-180"  />
+      {/* <LogOutIcon className="w-5 h-5 rotate-180"  /> */}
         Sign Out
       </button>
     </div>

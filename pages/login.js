@@ -4,9 +4,9 @@ import {LoginIcon} from "@heroicons/react/outline";
 import Link from 'next/link';
 import styles from '../styles/Form.module.css'
 import Image from 'next/image';
-import {HiAtSymbol,HiFingerPrint,HiUser} from 'react-icons/hi'
+import {HiAtSymbol,HiFingerPrint} from 'react-icons/hi'
 import { useState } from 'react';
-import { signIn, signOut } from "next-auth/react"
+import { signIn ,signOut} from "next-auth/react"
 import { useFormik } from 'formik';
 import login_validate from '../lib/validate';
 
@@ -33,11 +33,11 @@ export default function Login() {
   
   //? Google Handler 
   async function handleGoogleSignin(){
-    signIn('google',{callbackUrl:"http://localhost:3000"})
+    signIn("google",{callbackUrl:'http://localhost:3000'})
   }
   //? Github Handler 
   async function handleGithubSignin(){
-    signIn('github',{callbackUrl:"http://localhost:3000"})
+    signIn("github",{callbackUrl:"http://localhost:3000"})
   }
 
 

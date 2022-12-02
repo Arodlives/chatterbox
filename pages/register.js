@@ -25,9 +25,13 @@ export default function Register() {
   })
 
     async function onSubmit(values){
+      // const options = {
+      //   method: "POST",
+      //   headers : { 'Content-Type': 'application/json'},
+      //   body: JSON.stringify(values)
+      // }
       console.log(values)
     }
-
 
   
   return (

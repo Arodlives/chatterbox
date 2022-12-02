@@ -1,5 +1,6 @@
 import { StreamChat } from "stream-chat";
 
+
 export default function handler(req, res) {
     //accept user id to authenticate then create a token for that user 
     const { id } = JSON.parse(req.body);
